@@ -1,58 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="?attr/android:colorBackground">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/spacing_md">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/module_sync_title"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_sm"
-            android:background="@color/mk_badge_bg"
-            android:paddingStart="@dimen/spacing_sm"
-            android:paddingEnd="@dimen/spacing_sm"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
-            android:text="@string/status_badge_placeholder"
-            android:textColor="@color/mk_badge_text"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_lg"
-            app:cardCornerRadius="@dimen/card_corner_radius"
-            app:cardElevation="@dimen/card_elevation"
-            app:cardBackgroundColor="?attr/colorSurface"
-            app:strokeWidth="0dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/spacing_md"
-                android:text="@string/module_sync_detail"
-                android:textColor="@color/mk_text_secondary"
-                android:textSize="15sp"
-                android:lineSpacingExtra="4dp" />
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </LinearLayout>
-
-</ScrollView>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Synchronization Simulator" android:textSize="24sp" android:textStyle="bold"/>
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Peterson and Bakery using your actual simulated processes."/>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:orientation="vertical" android:padding="14dp" android:background="?attr/colorSurface">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Algorithm" android:textStyle="bold"/><Spinner android:id="@+id/spinner_sync_algorithm" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Participants" android:textStyle="bold"/><Spinner android:id="@+id/spinner_sync_process_count" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<TextView android:id="@+id/text_sync_selected_info" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="13sp"/>
+<Spinner android:id="@+id/spinner_sync_process_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp"/><Spinner android:id="@+id/spinner_sync_process_1" android:layout_width="match_parent" android:layout_height="wrap_content"/><Spinner android:id="@+id/spinner_sync_process_2" android:layout_width="match_parent" android:layout_height="wrap_content"/><Spinner android:id="@+id/spinner_sync_process_3" android:layout_width="match_parent" android:layout_height="wrap_content"/><Spinner android:id="@+id/spinner_sync_process_4" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Live Process State" android:textSize="18sp" android:textStyle="bold"/>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingTop="8dp">
+<TextView android:id="@+id/sync_process_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:background="?attr/colorSurface" android:textStyle="bold"/><TextView android:id="@+id/sync_process_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:background="?attr/colorSurface" android:textStyle="bold"/><TextView android:id="@+id/sync_process_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:background="?attr/colorSurface" android:textStyle="bold"/><TextView android:id="@+id/sync_process_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:background="?attr/colorSurface" android:textStyle="bold"/><TextView android:id="@+id/sync_process_4" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:background="?attr/colorSurface" android:textStyle="bold"/>
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="vertical" android:padding="14dp" android:background="?attr/colorSurface">
+<TextView android:id="@+id/text_sync_step" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold"/><TextView android:id="@+id/text_sync_action" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textSize="18sp" android:textStyle="bold"/><TextView android:id="@+id/text_sync_detail" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp"/><TextView android:id="@+id/text_sync_status" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textStyle="bold"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Shared State" android:textStyle="bold"/><TextView android:id="@+id/text_sync_shared_state" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp"/><TextView android:id="@+id/text_sync_order" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp"/>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal"><Button android:id="@+id/button_sync_next" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Start"/><Button android:id="@+id/button_sync_auto" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Auto Play"/><Button android:id="@+id/button_sync_reset" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Reset"/></LinearLayout>
+</LinearLayout>
+</LinearLayout></ScrollView>
