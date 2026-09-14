@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,45 +14,95 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/module_syscall_title"
+            android:text="System Calls"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_sm"
-            android:background="@color/mk_badge_bg"
-            android:paddingStart="@dimen/spacing_sm"
-            android:paddingEnd="@dimen/spacing_sm"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
-            android:text="@string/status_badge_placeholder"
-            android:textColor="@color/mk_badge_text"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            android:text="Trace how a system call moves from an application into the kernel and back."
+            android:textColor="@color/mk_text_secondary"
+            android:textSize="15sp" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_lg"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:cardBackgroundColor="?attr/colorSurface"
             app:cardCornerRadius="@dimen/card_corner_radius"
             app:cardElevation="@dimen/card_elevation"
-            app:cardBackgroundColor="?attr/colorSurface"
             app:strokeWidth="0dp">
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/spacing_md"
-                android:text="@string/module_syscall_detail"
-                android:textColor="@color/mk_text_secondary"
-                android:textSize="15sp"
-                android:lineSpacingExtra="4dp" />
-
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_md">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose System Call"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+                <RadioGroup
+                    android:id="@+id/syscall_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/spacing_sm">
+                    <RadioButton android:id="@+id/radio_read" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="read()" android:checked="true" />
+                    <RadioButton android:id="@+id/radio_write" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="write()" />
+                    <RadioButton android:id="@+id/radio_open" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="open()" />
+                    <RadioButton android:id="@+id/radio_close" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="close()" />
+                    <RadioButton android:id="@+id/radio_fork" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="fork()" />
+                    <RadioButton android:id="@+id/radio_exec" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="exec()" />
+                    <RadioButton android:id="@+id/radio_wait" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="wait()" />
+                </RadioGroup>
+                <TextView
+                    android:id="@+id/text_syscall_process"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:text="Process: —"
+                    android:textColor="@color/mk_text_secondary" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_refresh_syscall_processes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Refresh Processes"
+                    android:textAllCaps="false" />
+            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-    </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="@dimen/spacing_md">
+            <com.google.android.material.button.MaterialButton android:id="@+id/button_run_syscall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Run Trace" android:textAllCaps="false" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/button_next_syscall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="@dimen/spacing_sm" android:text="Next Step" android:textAllCaps="false" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton android:id="@+id/button_auto_syscall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Auto Play" android:textAllCaps="false" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/button_reset_syscall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="@dimen/spacing_sm" android:text="Reset" android:textAllCaps="false" />
+        </LinearLayout>
 
-</ScrollView>
+        <TextView android:id="@+id/text_syscall_status" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_sm" android:text="Ready." android:textColor="@color/mk_text_secondary" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_md" app:cardBackgroundColor="?attr/colorSurface" app:cardCornerRadius="@dimen/card_corner_radius" app:cardElevation="@dimen/card_elevation" app:strokeWidth="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/spacing_md">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="System Call Flow" android:textColor="?attr/colorOnSurface" android:textSize="17sp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_sm" android:text="USER MODE  →  TRAP  →  KERNEL  →  RETURN  →  USER MODE" android:textColor="@color/mk_badge_text" android:background="@color/mk_badge_bg" android:padding="@dimen/spacing_sm" android:textSize="12sp" />
+                <TextView android:id="@+id/text_syscall_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_md" android:text="0 / 0" android:textColor="@color/mk_text_secondary" />
+                <TextView android:id="@+id/text_syscall_step" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_xs" android:text="Step 0" android:textColor="?attr/colorOnSurface" android:textSize="20sp" android:textStyle="bold" />
+                <TextView android:id="@+id/text_syscall_stage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_sm" android:text="READY" android:textColor="@color/mk_badge_text" android:background="@color/mk_badge_bg" android:paddingStart="@dimen/spacing_sm" android:paddingEnd="@dimen/spacing_sm" android:paddingTop="4dp" android:paddingBottom="4dp" android:textStyle="bold" />
+                <TextView android:id="@+id/text_syscall_action" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_md" android:text="Choose a system call and press Run Trace." android:textColor="?attr/colorOnSurface" android:textSize="16sp" android:textStyle="bold" />
+                <TextView android:id="@+id/text_syscall_detail_live" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_sm" android:text="The trace will simulate the transition from user mode to kernel mode and back." android:textColor="@color/mk_text_secondary" android:textSize="14sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_md" android:layout_marginBottom="@dimen/spacing_lg" app:cardBackgroundColor="?attr/colorSurface" app:cardCornerRadius="@dimen/card_corner_radius" app:cardElevation="@dimen/card_elevation" app:strokeWidth="0dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/spacing_md" android:text="Educational note: this is a safe simulation. The app does not invoke privileged Linux/Android system calls or modify the real operating system." android:textColor="@color/mk_text_secondary" android:textSize="13sp" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
