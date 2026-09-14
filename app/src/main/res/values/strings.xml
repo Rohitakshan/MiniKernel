@@ -47,13 +47,13 @@
     <string name="about_overview">Mini Kernel is an educational simulation of core Operating Systems concepts, built to help visualize process management, concurrency, scheduling, memory management, and system calls in an interactive way. It is intended purely for academic learning and does not modify or interact with the real operating system.</string>
 
     <string name="about_section_team">Team Members</string>
-    <string name="about_team_placeholder">• Member Name — Role\n• Member Name — Role\n• Member Name — Role</string>
+    <string name="about_team_placeholder">• Rohitakshan T A — 25BCE1557\n• Rayyan Mirza — 25BCE1745\n• Rohan Konduru — 25BCE1744</string>
 
     <string name="about_section_course">Course</string>
-    <string name="about_course_placeholder">Operating Systems (Course Code)</string>
+    <string name="about_course_placeholder">Operating Systems (BACSE106)</string>
 
     <string name="about_section_college">College</string>
-    <string name="about_college_placeholder">College / University Name</string>
+    <string name="about_college_placeholder">VIT CHENNAI</string>
 
     <string name="about_section_year">Academic Year</string>
     <string name="about_year_placeholder">2025 – 2026</string>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="?attr/android:colorBackground">
 
     <LinearLayout
@@ -14,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/module_ipc_title"
+            android:text="IPC &amp; Pipes"
             android:textColor="?attr/colorOnSurface"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -22,37 +23,89 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_sm"
-            android:background="@color/mk_badge_bg"
-            android:paddingStart="@dimen/spacing_sm"
-            android:paddingEnd="@dimen/spacing_sm"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
-            android:text="@string/status_badge_placeholder"
-            android:textColor="@color/mk_badge_text"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:text="Watch a message travel from one simulated process to another."
+            android:textColor="@color/mk_text_secondary"
+            android:textSize="14sp" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_lg"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:cardBackgroundColor="?attr/colorSurface"
             app:cardCornerRadius="@dimen/card_corner_radius"
             app:cardElevation="@dimen/card_elevation"
-            app:cardBackgroundColor="?attr/colorSurface"
             app:strokeWidth="0dp">
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/spacing_md"
-                android:text="@string/module_ipc_detail"
-                android:textColor="@color/mk_text_secondary"
-                android:textSize="15sp"
-                android:lineSpacingExtra="4dp" />
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_md">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1. Select processes" android:textColor="?attr/colorOnSurface" android:textStyle="bold" android:textSize="16sp" />
+                <Button android:id="@+id/button_writer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Select Writer" android:textAllCaps="false" />
+                <TextView android:id="@+id/text_writer" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="4dp" android:textColor="@color/mk_text_secondary" />
+                <Button android:id="@+id/button_reader" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Select Reader" android:textAllCaps="false" />
+                <TextView android:id="@+id/text_reader" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="4dp" android:textColor="@color/mk_text_secondary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:strokeWidth="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_md">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2. Write into the pipe" android:textColor="?attr/colorOnSurface" android:textStyle="bold" android:textSize="16sp" />
+                <EditText android:id="@+id/input_message" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:hint="Message to send" android:inputType="textCapSentences|textMultiLine" android:maxLines="3" />
+                <Button android:id="@+id/button_write" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Write to Pipe →" android:textAllCaps="false" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:strokeWidth="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_md">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3. PIPE BUFFER" android:textColor="?attr/colorOnSurface" android:textStyle="bold" android:textSize="16sp" />
+                <TextView android:id="@+id/text_pipe_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="EMPTY" android:textStyle="bold" android:textColor="?attr/colorOnSurface" />
+                <TextView android:id="@+id/text_pipe_buffer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:padding="12dp" android:background="@color/mk_badge_bg" android:textColor="@color/mk_badge_text" android:textSize="15sp" />
+                <Button android:id="@+id/button_read" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Read from Pipe →" android:textAllCaps="false" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:strokeWidth="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_md">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IPC Activity" android:textColor="?attr/colorOnSurface" android:textStyle="bold" android:textSize="16sp" />
+                <TextView android:id="@+id/text_ipc_activity" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="@color/mk_text_secondary" android:textSize="14sp" />
+                <Button android:id="@+id/button_reset" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Reset Pipe" android:textAllCaps="false" />
+            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
-
-</ScrollView>
+</androidx.core.widget.NestedScrollView>
