@@ -57,4 +57,29 @@
 
     <string name="about_section_year">Academic Year</string>
     <string name="about_year_placeholder">2025 – 2026</string>
+
+    <!-- M1: Process Manager -->
+    <string name="process_manager_subtitle">Simulate process creation, lifecycle, and state transitions.</string>
+    <string name="process_lifecycle_title">Process Lifecycle</string>
+    <string name="process_lifecycle_flow">NEW  →  READY  →  RUNNING  →  WAITING  →  READY
+RUNNING  →  TERMINATED</string>
+    <string name="process_lifecycle_note">Only valid transitions are enabled for each process.</string>
+    <string name="create_process">Create Process</string>
+    <string name="create_process_dialog_title">Create a simulated process</string>
+    <string name="process_name_hint">Process name</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="process_pid_format">PID %1$d</string>
+    <plurals name="process_count">
+        <item quantity="one">1 simulated process</item>
+        <item quantity="other">%1$d simulated processes</item>
+    </plurals>
+    <string name="process_empty">No processes yet. Create one to start the simulation.</string>
+    <string name="action_ready">Ready</string>
+    <string name="action_run">Run</string>
+    <string name="action_wait">Wait</string>
+    <string name="action_terminate">Terminate</string>
+    <string name="action_delete">Delete</string>
+    <string name="invalid_transition">That state transition is not valid.</string>
+    <string name="delete_only_terminated">Only terminated processes can be deleted.</string>
 </resources>
