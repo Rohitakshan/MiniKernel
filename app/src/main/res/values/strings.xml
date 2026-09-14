@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mini Kernel</string>
+    <string name="app_title">MINI KERNEL</string>
+    <string name="app_subtitle">Interactive OS &amp; Concurrency Simulator</string>
+    <string name="home_header">Select a module to explore</string>
+    <string name="status_badge_placeholder">Placeholder — Coming Soon</string>
+
+    <!-- Process Manager -->
+    <string name="module_process_title">Process Manager</string>
+    <string name="module_process_desc">Create, manage, and terminate simulated processes.</string>
+    <string name="module_process_detail">This module will let you create processes, manage process states (New, Ready, Running, Waiting, Terminated), and visualize the process lifecycle in real time.</string>
+
+    <!-- Thread Manager -->
+    <string name="module_thread_title">Thread Manager</string>
+    <string name="module_thread_desc">Spawn and control threads within a process.</string>
+    <string name="module_thread_detail">This module will simulate thread creation, thread states, and context switching, helping visualize how threads execute independently within a process.</string>
+
+    <!-- Synchronization -->
+    <string name="module_sync_title">Synchronization</string>
+    <string name="module_sync_desc">Explore critical sections, Peterson\'s and Bakery algorithms.</string>
+    <string name="module_sync_detail">This module will demonstrate classic solutions to the critical-section problem, including Peterson\'s Algorithm and the Bakery Algorithm, and visualize how mutual exclusion is achieved between concurrent threads.</string>
+
+    <!-- IPC & Pipes -->
+    <string name="module_ipc_title">IPC &amp; Pipes</string>
+    <string name="module_ipc_desc">Simulate inter-process communication and pipes.</string>
+    <string name="module_ipc_detail">This module will simulate message passing, shared memory, and pipe-based communication between simulated processes.</string>
+
+    <!-- CPU Scheduler -->
+    <string name="module_scheduler_title">CPU Scheduler</string>
+    <string name="module_scheduler_desc">Visualize FCFS, SJF, Round Robin, and more.</string>
+    <string name="module_scheduler_detail">This module will implement and visualize CPU scheduling algorithms including FCFS, SJF, Priority, and Round Robin, with Gantt chart output.</string>
+
+    <!-- Memory Manager -->
+    <string name="module_memory_title">Memory Manager</string>
+    <string name="module_memory_desc">Simulate paging, segmentation, and allocation.</string>
+    <string name="module_memory_detail">This module will simulate memory allocation strategies, paging, and segmentation, along with page replacement algorithms.</string>
+
+    <!-- System Calls -->
+    <string name="module_syscall_title">System Calls</string>
+    <string name="module_syscall_desc">Trace simulated system call execution.</string>
+    <string name="module_syscall_detail">This module will simulate how system calls transition control between user mode and kernel mode during execution.</string>
+
+    <!-- About -->
+    <string name="module_about_title">About Project</string>
+    <string name="module_about_desc">Learn about the Mini Kernel academic project.</string>
+    <string name="about_overview">Mini Kernel is an educational simulation of core Operating Systems concepts, built to help visualize process management, concurrency, scheduling, memory management, and system calls in an interactive way. It is intended purely for academic learning and does not modify or interact with the real operating system.</string>
+
+    <string name="about_section_team">Team Members</string>
+    <string name="about_team_placeholder">• Member Name — Role\n• Member Name — Role\n• Member Name — Role</string>
+
+    <string name="about_section_course">Course</string>
+    <string name="about_course_placeholder">Operating Systems (Course Code)</string>
+
+    <string name="about_section_college">College</string>
+    <string name="about_college_placeholder">College / University Name</string>
+
+    <string name="about_section_year">Academic Year</string>
+    <string name="about_year_placeholder">2025 – 2026</string>
+</resources>

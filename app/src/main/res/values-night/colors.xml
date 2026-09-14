@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mk_primary">#7986CB</color>
+    <color name="mk_primary_dark">#5C6BC0</color>
+    <color name="mk_secondary">#4DD0E1</color>
+
+    <color name="mk_background">#121218</color>
+    <color name="mk_surface">#1E1F27</color>
+    <color name="mk_surface_variant">#262835</color>
+
+    <color name="mk_text_primary">#EDEEF3</color>
+    <color name="mk_text_secondary">#A6ABBD</color>
+
+    <color name="mk_on_primary">#111225</color>
+    <color name="mk_badge_bg">#2A2E45</color>
+    <color name="mk_badge_text">#9FA8DA</color>
+</resources>
