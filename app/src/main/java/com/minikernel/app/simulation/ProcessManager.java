@@ -12,9 +12,20 @@ import java.util.List;
  */
 public class ProcessManager {
     private static final int FIRST_PID = 1001;
+    private static ProcessManager instance;
 
     private final List<SimulatedProcess> processes = new ArrayList<>();
     private int nextPid = FIRST_PID;
+
+    public ProcessManager() {
+    }
+
+    public static synchronized ProcessManager getInstance() {
+        if (instance == null) {
+            instance = new ProcessManager();
+        }
+        return instance;
+    }
 
     public SimulatedProcess createProcess(String name) {
         String cleanName = name == null ? "" : name.trim();

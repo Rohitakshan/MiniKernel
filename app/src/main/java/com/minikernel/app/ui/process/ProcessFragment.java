@@ -27,7 +27,7 @@ import java.util.List;
 
 public class ProcessFragment extends Fragment implements ProcessActionListener {
 
-    private final ProcessManager processManager = new ProcessManager();
+    private final ProcessManager processManager = ProcessManager.getInstance();
     private final List<SimulatedProcess> displayedProcesses = new ArrayList<>();
 
     private ProcessAdapter adapter;

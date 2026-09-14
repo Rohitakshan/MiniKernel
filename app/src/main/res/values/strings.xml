@@ -82,4 +82,32 @@ RUNNING  →  TERMINATED</string>
     <string name="action_delete">Delete</string>
     <string name="invalid_transition">That state transition is not valid.</string>
     <string name="delete_only_terminated">Only terminated processes can be deleted.</string>
+    <!-- M2: Thread Manager -->
+    <string name="thread_manager_title">Thread Manager</string>
+    <string name="thread_manager_subtitle">Simulate threads within a process and visualize their lifecycle.</string>
+    <string name="thread_lifecycle_title">Thread Lifecycle</string>
+    <string name="thread_lifecycle_flow">NEW → READY → RUNNING
+WAITING → READY
+RUNNING → TERMINATED</string>
+    <string name="thread_lifecycle_note">Each thread belongs to a simulated process. Only valid transitions are enabled.</string>
+    <string name="thread_select_process">Select a process</string>
+    <string name="thread_process_option">PID %1$d — %2$s</string>
+    <string name="thread_selected_process">Threads belonging to PID %1$d — %2$s</string>
+    <string name="thread_no_process_selected">No process selected</string>
+    <string name="thread_create_process_first">Create a process in Process Manager first.</string>
+    <string name="thread_empty">No threads yet. Create one for this process.</string>
+    <string name="create_thread">Create Thread</string>
+    <string name="create_thread_dialog_title">Create a simulated thread</string>
+    <string name="thread_name_hint">Thread name</string>
+    <string name="thread_create_for_process">Parent process: PID %1$d — %2$s</string>
+    <string name="thread_create_requires_process">Create a process first, then select it here.</string>
+    <string name="thread_tid_format">TID %1$d</string>
+    <string name="thread_parent_pid_format">Parent PID %1$d</string>
+    <string name="invalid_thread_transition">That thread state transition is not valid.</string>
+    <string name="thread_delete_only_terminated">Only terminated threads can be deleted.</string>
+    <plurals name="thread_count">
+        <item quantity="one">1 simulated thread</item>
+        <item quantity="other">%1$d simulated threads</item>
+    </plurals>
+
 </resources>
