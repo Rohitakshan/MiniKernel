@@ -58,6 +58,8 @@ public class HomeFragment extends Fragment {
                 getString(R.string.module_memory_title), getString(R.string.module_memory_desc)));
         modules.add(new ModuleItem(ModuleClickListener.MODULE_SYSCALL, "K",
                 getString(R.string.module_syscall_title), getString(R.string.module_syscall_desc)));
+        modules.add(new ModuleItem(ModuleClickListener.MODULE_DEADLOCK, "D",
+                "Deadlock Simulator", "Explore Banker's Algorithm and safe/unsafe resource states."));
         modules.add(new ModuleItem(ModuleClickListener.MODULE_ABOUT, "?",
                 getString(R.string.module_about_title), getString(R.string.module_about_desc)));
         return modules;

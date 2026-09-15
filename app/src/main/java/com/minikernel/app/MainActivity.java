@@ -12,6 +12,7 @@ import com.minikernel.app.ui.about.AboutFragment;
 import com.minikernel.app.ui.home.HomeFragment;
 import com.minikernel.app.ui.home.ModuleClickListener;
 import com.minikernel.app.ui.ipc.IpcFragment;
+import com.minikernel.app.ui.deadlock.DeadlockFragment;
 import com.minikernel.app.ui.memory.MemoryFragment;
 import com.minikernel.app.ui.process.ProcessFragment;
 import com.minikernel.app.ui.scheduler.SchedulerFragment;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements ModuleClickListen
         if (current instanceof SchedulerFragment) return getString(R.string.module_scheduler_title);
         if (current instanceof MemoryFragment) return getString(R.string.module_memory_title);
         if (current instanceof SystemCallFragment) return getString(R.string.module_syscall_title);
+        if (current instanceof DeadlockFragment) return "Deadlock Simulator";
         if (current instanceof AboutFragment) return getString(R.string.module_about_title);
 
         return getString(R.string.app_title);
@@ -99,6 +101,8 @@ public class MainActivity extends AppCompatActivity implements ModuleClickListen
                 return new MemoryFragment();
             case ModuleClickListener.MODULE_SYSCALL:
                 return new SystemCallFragment();
+            case ModuleClickListener.MODULE_DEADLOCK:
+                return new DeadlockFragment();
             case ModuleClickListener.MODULE_ABOUT:
                 return new AboutFragment();
             default:
