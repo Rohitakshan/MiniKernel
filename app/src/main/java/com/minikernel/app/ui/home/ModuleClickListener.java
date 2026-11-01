@@ -7,9 +7,9 @@ public interface ModuleClickListener {
     String MODULE_SYNCHRONIZATION = "synchronization";
     String MODULE_IPC = "ipc";
     String MODULE_SCHEDULER = "scheduler";
+    String MODULE_DISK_SCHEDULER = "disk_scheduler";
     String MODULE_MEMORY = "memory";
     String MODULE_SYSCALL = "syscall";
-    String MODULE_DEADLOCK = "deadlock";
     String MODULE_ABOUT = "about";
 
     void onModuleClicked(String moduleId);

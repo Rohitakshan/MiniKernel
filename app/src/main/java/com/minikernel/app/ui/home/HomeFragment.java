@@ -54,12 +54,12 @@ public class HomeFragment extends Fragment {
                 getString(R.string.module_ipc_title), getString(R.string.module_ipc_desc)));
         modules.add(new ModuleItem(ModuleClickListener.MODULE_SCHEDULER, "C",
                 getString(R.string.module_scheduler_title), getString(R.string.module_scheduler_desc)));
+        modules.add(new ModuleItem(ModuleClickListener.MODULE_DISK_SCHEDULER, "D",
+                "Disk Scheduling", "Compare FCFS, SSTF, SCAN, C-SCAN, LOOK and C-LOOK."));
         modules.add(new ModuleItem(ModuleClickListener.MODULE_MEMORY, "M",
                 getString(R.string.module_memory_title), getString(R.string.module_memory_desc)));
         modules.add(new ModuleItem(ModuleClickListener.MODULE_SYSCALL, "K",
                 getString(R.string.module_syscall_title), getString(R.string.module_syscall_desc)));
-        modules.add(new ModuleItem(ModuleClickListener.MODULE_DEADLOCK, "D",
-                "Deadlock Simulator", "Explore Banker's Algorithm and safe/unsafe resource states."));
         modules.add(new ModuleItem(ModuleClickListener.MODULE_ABOUT, "?",
                 getString(R.string.module_about_title), getString(R.string.module_about_desc)));
         return modules;
